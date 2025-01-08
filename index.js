@@ -1,19 +1,14 @@
 // Configure AWS SDK
 AWS.config.update({
-    accessKeyId: "AKIA4MI2JXJFHF7FGT7J",       // Replace with your AWS Access Key ID
-    secretAccessKey: "aXsMTRNTHpzzXzqBH+iMgj17W+ZJKySO1lq2fxYa", // Replace with your AWS Secret Access Key
-    region: "ap-southeast-2"                    // Replace with your S3 bucket's region
+    accessKeyId: "*****",       // Replace with your AWS Access Key ID
+    secretAccessKey: "*******", // Replace with your AWS Secret Access Key
+    region: "*******"                    // Replace with your S3 bucket's region
   });
   
   // Create an S3 instance
   const s3 = new AWS.S3();
   
-  /**
-   * Function to count the number of objects in an S3 bucket
-   * @param {string} bucketName - Name of the S3 bucket
-   * @param {string} prefix - Prefix for filtering objects (optional)
-   * @returns {Promise<number>} - Total object count
-   */
+
   async function countObjectsInBucket(bucketName, prefix = '') {
     try {
       const params = {
@@ -43,12 +38,9 @@ AWS.config.update({
     }
   }
   
-  /**
-   * Function to display the object count on the HTML page
-   */
   async function displayObjectCount() {
-    const bucketName = "nucketnoggets"; // Replace with your bucket name
-    const prefix = "AWSLogs/850995558986/CloudFront/"; // Optional: Specify a prefix to count objects in a specific folder
+    const bucketName = "*********"; // Replace with your bucket name
+    const prefix = "**********"; // Optional: Specify a prefix to count objects in a specific folder
   
     // Count the objects
     const count = await countObjectsInBucket(bucketName, prefix);
